@@ -1,0 +1,7 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-inicio',
+  template: '<h2>Inicio</h2><p>Bienvenido al consultorio.</p>'
+})
+export class InicioComponent {}
