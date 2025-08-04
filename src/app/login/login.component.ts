@@ -13,6 +13,7 @@ import { AuthStateService } from '../services/auth-state.service';
 })
 export class LoginComponent {
   email = '';
+  clave = '';
   error = '';
 
   constructor(
@@ -22,13 +23,13 @@ export class LoginComponent {
   ) {}
 
   login() {
-    const user = this.loginService.login(this.email);
+    const user = this.loginService.login(this.email, this.clave);
     if (user) {
       localStorage.setItem('user', JSON.stringify(user));
       this.authState.setAuthenticated(true);
       this.router.navigate(['/']);
     } else {
-      this.error = 'Usuario no encontrado';
+      this.error = 'Usuario o clave incorrectos';
     }
   }
 }
