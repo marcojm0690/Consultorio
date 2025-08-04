@@ -7,6 +7,8 @@ import { InicioComponent } from './inicio/inicio.component';
 import { PacientesComponent } from './pacientes/pacientes.component';
 import { CitasComponent } from './citas/citas.component';
 import { ConfiguracionComponent } from './configuracion/configuracion.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { ConfiguracionComponent } from './configuracion/configuracion.component'
     InicioComponent,
     PacientesComponent,
     CitasComponent,
-    ConfiguracionComponent
+    ConfiguracionComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   bootstrap: [AppComponent]
 })

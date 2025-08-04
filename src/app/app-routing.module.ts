@@ -4,17 +4,14 @@ import { InicioComponent } from './inicio/inicio.component';
 import { PacientesComponent } from './pacientes/pacientes.component';
 import { CitasComponent } from './citas/citas.component';
 import { ConfiguracionComponent } from './configuracion/configuracion.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth.guard';
 
-const routes: Routes = [
-  { path: '', component: InicioComponent },
-  { path: 'pacientes', component: PacientesComponent },
-  { path: 'citas', component: CitasComponent },
-  { path: 'configuracion', component: ConfiguracionComponent },
+export const routes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: '', component: InicioComponent, canActivate: [AuthGuard] },
+  { path: 'pacientes', component: PacientesComponent, canActivate: [AuthGuard] },
+  { path: 'citas', component: CitasComponent, canActivate: [AuthGuard] },
+  { path: 'configuracion', component: ConfiguracionComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule {}

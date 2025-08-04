@@ -1,12 +1,9 @@
 
-<nav style="background: #618177; padding: 1rem; color: white; display: flex; justify-content: center;">
-  <a routerLink="/" routerLinkActive="active" style="color: white; margin: 0 1rem; text-decoration: none; font-weight: bold;">Inicio</a>
-  <a routerLink="/pacientes" routerLinkActive="active" style="color: white; margin: 0 1rem; text-decoration: none; font-weight: bold;">Pacientes</a>
-  <a routerLink="/citas" routerLinkActive="active" style="color: white; margin: 0 1rem; text-decoration: none; font-weight: bold;">Citas</a>
-  <a routerLink="/configuracion" routerLinkActive="active" style="color: white; margin: 0 1rem; text-decoration: none; font-weight: bold;">Configuración</a>
-</nav>
-<div style="text-align:center; margin-top: 40px;">
-  <h1>Consultorio</h1>
+<div *ngIf="authState.isAuthenticated$ | async">
+  <app-nav-header></app-nav-header>
+  <div style="text-align:center; margin-top: 40px;">
+    <h1>Consultorio</h1>
+  </div>
 </div>
 <div style="margin-top: 32px;">
   <router-outlet></router-outlet>
